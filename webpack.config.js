@@ -1,3 +1,5 @@
+const path = require("path");
+
 module.exports = {
   entry: [
     './src/index.js'
@@ -14,7 +16,11 @@ module.exports = {
     }]
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['', '.js', '.jsx'],
+    alias: {
+        data: path.resolve(__dirname, 'data/'),
+        app: path.resolve(__dirname, 'src/app/')
+    }
   },
   devServer: {
     historyApiFallback: true,
