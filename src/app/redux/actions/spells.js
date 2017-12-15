@@ -12,7 +12,7 @@ const spellsResponse = (data) => ({
 
 const spellsError = (error) => ({
   type: 'SPELLS_ERROR',
-  payload: error,
+  error: error,
 });
 
 export const fetchSpells = (params) => {
@@ -30,12 +30,5 @@ export const fetchSpells = (params) => {
       dispatch(spellsError(error.message));
     });
 
-    //return get(`${API_URL}/spellss`, params)
-      //.catch(errResponse => {
-        //dispatch(spellsError(errResponse));
-      //})
-      //.then(response => {
-        //dispatch(spellsResponse(response.data));
-      //})
   };
 }

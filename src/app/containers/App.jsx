@@ -10,17 +10,11 @@ import { fetchSpells } from 'app/redux/actions/spells'
     spells: getAllSpells(state),
   }),
   (dispatch, ownProps) => ({
-    fetchSpells: dispatch(fetchSpells()),
   })
 )
 class App extends Component {
   constructor(props) {
     super(props);
-  }
-
-  componentWillMount() {
-    const { fetchSpells } = this.props
-    fetchSpells()
   }
 
   render() {
