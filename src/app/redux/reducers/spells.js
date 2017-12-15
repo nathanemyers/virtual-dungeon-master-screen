@@ -1,7 +1,5 @@
-import spell_data from 'data/spells.json'
-
 const initialSpellState = {
-  spells: spell_data,
+  spells: [],
   loading: true,
   error: null,
 };
