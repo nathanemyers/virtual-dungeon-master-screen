@@ -1,10 +1,8 @@
 import spell_data from 'data/spells'
 
 const initialSpellState = {
-  spells: spell_data
+  spells: []
 };
-
-debugger
 
 const spells =  (state = initialSpellState, action) => {
   let newState = Object.assign({}, state);
