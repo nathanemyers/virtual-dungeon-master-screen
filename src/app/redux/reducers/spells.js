@@ -1,7 +1,7 @@
-import spell_data from 'data/spells'
+import spell_data from 'data/spells.json'
 
 const initialSpellState = {
-  spells: []
+  spells: spell_data
 };
 
 const spells =  (state = initialSpellState, action) => {
