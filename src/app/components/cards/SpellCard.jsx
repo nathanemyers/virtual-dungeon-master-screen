@@ -1,31 +1,45 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 
+import { Card } from 'semantic-ui-react'
+import Highlighter from 'react-highlight-words'
+
 class SpellCard extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    const { spell } = this.props
+    const { spell, search } = this.props
+
+    const highlightStyle = {
+      backgroundColor: 'yellow'
+    }
 
     return (
-      <div className="spell-card">
-        <h4>
-          {spell.name} 
-          <small>
+      <Card color={"blue"} raised={true}>
+        <Card.Content>
+          <Card.Header>
+            <strong>{spell.name}</strong>
+          </Card.Header>
+          <Card.Meta>
             (Level: {spell.level})
-          </small>
-        </h4>
-        <p className="spell-description">{spell.description}</p>
-        
-      </div>
+          </Card.Meta>
+          <Card.Description>
+            <Highlighter
+              searchWords={[search]}
+              textToHighlight={spell.description}
+            />
+          </Card.Description>
+        </Card.Content>
+      </Card>
     );
   }
 }
 
 SpellCard.propTypes = {
   spell: PropTypes.object.isRequired,
+  search: PropTypes.string,
 }
 
 export default SpellCard;

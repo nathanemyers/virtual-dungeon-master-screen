@@ -10,16 +10,38 @@ module.exports = {
     filename: 'bundle.js'
   },
   module: {
-    loaders: [{
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    }]
+    rules: [
+      {
+        test: /\.scss$/,
+        use: [
+          {loader: "style-loader"},
+          {loader: "css-loader"},        
+          {loader: "sass-loader"},
+        ]
+      },
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {loader: "babel-loader"},
+        ]
+      },
+    ],
+    //loaders: [{
+      //exclude: /node_modules/,
+      //loader: 'babel-loader'
+    //}]
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: [
+      '.js', 
+      '.jsx', 
+      '.scss',
+    ],
     alias: {
         data: path.resolve(__dirname, 'data/'),
-        app: path.resolve(__dirname, 'src/app/')
+        app: path.resolve(__dirname, 'src/app/'),
+        style: path.resolve(__dirname, 'src/style/'),
     }
   },
   devtool: 'inline-source-map',
