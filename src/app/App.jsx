@@ -3,11 +3,13 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux'
 
 import { getAllSpells, getFilteredSpells } from 'app/redux/selectors/spells'
+import { getAllMonsters, getFilteredMonsters } from 'app/redux/selectors/monsters'
 import { getSearchTerm, getMinSearch } from 'app/redux/selectors/ui'
 
 import { update_search } from 'app/redux/actions/ui'
 
 import SpellCard from 'app/components/cards/SpellCard'
+import MonsterCard from 'app/components/cards/MonsterCard'
 import { Input, Card, Container } from 'semantic-ui-react'
 
 import style from 'style/style'
@@ -15,7 +17,9 @@ import style from 'style/style'
 @connect(
   (state, ownProps) => ({
     spells: getAllSpells(state),
+    monsters: getAllMonsters(state),
     filtered_spells: getFilteredSpells(state),
+    filtered_monsters: getFilteredMonsters(state),
     search_term: getSearchTerm(state),
     min_search: getMinSearch(state),
   }),
@@ -31,7 +35,9 @@ class App extends Component {
   render() {
     const {
       spells, 
+      monsters, 
       filtered_spells, 
+      filtered_monsters, 
       update_search, 
       search_term,
       min_search,
@@ -47,6 +53,18 @@ class App extends Component {
         return <SpellCard key={index} spell={spell} search={search_term}/>
       })
     }
+
+    let monster_cards = [] 
+    if (search_term.length === 0) {
+      monster_cards = monsters.map((monster, index) => {
+        return <MonsterCard key={index} monster={monster}/>
+      })
+    } else {
+      monster_cards = filtered_monsters.map((monster, index) => {
+        return <MonsterCard key={index} monster={monster} search={search_term}/>
+      })
+    }
+
 
     function onChange(event, data) {
       update_search(data.value)
@@ -72,6 +90,7 @@ class App extends Component {
             :
             <Card.Group itemsPerRow={3} stackable={true} doubling={true}>
               { spell_cards }
+              { monster_cards }
             </Card.Group>
         }
       </Container>

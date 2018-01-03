@@ -7,8 +7,10 @@ import App from 'app/App'
 import store from 'app/redux/store'
 
 import { fetchSpells } from 'app/redux/actions/spells'
+import { fetchMonsters } from 'app/redux/actions/monsters'
 
 store.dispatch(fetchSpells())
+store.dispatch(fetchMonsters())
 
 ReactDOM.render(
   <Provider store={store}>
