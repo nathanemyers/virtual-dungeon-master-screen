@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "babel-preset-stage-1": "^6.1.18",
+    "css-loader": "^0.28.7",
     "lodash": "^3.10.1",
     "react": "^0.14.3",
     "react-dom": "^0.14.3",
@@ -39,6 +40,7 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
-    "semantic-ui-react": "^0.77.1"
+    "semantic-ui-react": "^0.77.1",
+    "style-loader": "^0.19.1"
   }
 }
