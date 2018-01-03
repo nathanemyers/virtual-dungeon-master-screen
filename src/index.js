@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 
-import App from 'app/containers/App'
+import App from 'app/App'
 import store from 'app/redux/store'
 
 import { fetchSpells } from 'app/redux/actions/spells'

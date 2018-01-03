@@ -1,4 +1,4 @@
-import { SPELL_API } from 'app/api'
+import { SPELL_API } from 'app/constants/api'
 
 const spellsRequest = (params) => ({
   type: 'SPELLS_REQUEST',
