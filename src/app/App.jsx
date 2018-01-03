@@ -44,22 +44,14 @@ class App extends Component {
     } = this.props
 
     let spell_cards = [] 
-    if (search_term.length === 0) {
-      spell_cards = spells.map((spell, index) => {
-        return <SpellCard key={index} spell={spell}/>
-      })
-    } else {
+    if (search_term.length > 0) {
       spell_cards = filtered_spells.map((spell, index) => {
         return <SpellCard key={index} spell={spell} search={search_term}/>
       })
     }
 
     let monster_cards = [] 
-    if (search_term.length === 0) {
-      monster_cards = monsters.map((monster, index) => {
-        return <MonsterCard key={index} monster={monster}/>
-      })
-    } else {
+    if (search_term.length > 0) {
       monster_cards = filtered_monsters.map((monster, index) => {
         return <MonsterCard key={index} monster={monster} search={search_term}/>
       })

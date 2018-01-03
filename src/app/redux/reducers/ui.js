@@ -1,6 +1,6 @@
 const initialUIState = {
   search_term: "",
-  min_search: 3,
+  min_search: 1,
 };
 
 const spells =  (state = initialUIState, action) => {
