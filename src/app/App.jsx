@@ -10,7 +10,7 @@ import { update_search } from 'app/redux/actions/ui'
 import SpellCard from 'app/components/cards/SpellCard'
 import { Input, Card, Container } from 'semantic-ui-react'
 
-//import styles from 'style/style'
+import style from 'style/style'
 
 @connect(
   (state, ownProps) => ({
@@ -56,7 +56,7 @@ class App extends Component {
 
     return (
       <Container>
-        <Container>
+        <Container className={style.search}>
           <Input fluid onChange={onChange} />
         </Container>
         { insuffiecient_search ?
