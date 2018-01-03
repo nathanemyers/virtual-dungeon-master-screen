@@ -57,7 +57,13 @@ class App extends Component {
     return (
       <Container>
         <Container className={style.search}>
-          <Input fluid onChange={onChange} />
+          <Input 
+            fluid 
+            placeholder="Search Spells..."
+            icon="search" 
+            iconPosition="left"
+            onChange={onChange} 
+          />
         </Container>
         { insuffiecient_search ?
             <div>
