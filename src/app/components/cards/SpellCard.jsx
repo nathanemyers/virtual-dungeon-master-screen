@@ -1,7 +1,7 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 
-import { Card } from 'semantic-ui-react'
+import { Card, Label, Accordion } from 'semantic-ui-react'
 import Highlighter from 'react-highlight-words'
 
 class SpellCard extends Component {
@@ -17,13 +17,24 @@ class SpellCard extends Component {
     }
 
     return (
-      <Card color={"blue"} raised={true}>
+      <Card color="blue" raised={true}>
         <Card.Content>
           <Card.Header>
             <strong>{spell.name}</strong>
+            <Label attached="top right" color="blue">Spell</Label>
           </Card.Header>
           <Card.Meta>
-            (Level: {spell.level})
+            <Accordion exclusive={false}>
+              <Accordion.Title>
+                Level: {spell.level}
+              </Accordion.Title>
+              <Accordion.Content>
+                <div> Action Cost: {spell.casting_time} </div>
+                <div> Duration: {spell.duration} </div>
+                <div> Range: {spell.range} </div>
+                <div> School: {spell.school} </div>
+              </Accordion.Content>
+            </Accordion>
           </Card.Meta>
           <Card.Description>
             <Highlighter

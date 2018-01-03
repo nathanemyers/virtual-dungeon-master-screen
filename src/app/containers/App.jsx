@@ -61,7 +61,7 @@ class App extends Component {
         </Container>
         { insuffiecient_search ?
             <div>
-              Search begins at {min_search} characters
+              Search begins at {min_search + 1} characters
             </div>
             :
             <Card.Group itemsPerRow={3} stackable={true} doubling={true}>
