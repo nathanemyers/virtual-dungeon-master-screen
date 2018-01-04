@@ -15,12 +15,7 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {loader: "style-loader"},
-          {
-            loader: "css-loader", 
-            options: {
-              modules: true
-            }
-          },        
+          {loader: "css-loader", options: {modules: true}},        
           {loader: "sass-loader"},
         ]
       },
@@ -32,10 +27,6 @@ module.exports = {
         ]
       },
     ],
-    //loaders: [{
-      //exclude: /node_modules/,
-      //loader: 'babel-loader'
-    //}]
   },
   resolve: {
     extensions: [
@@ -44,7 +35,6 @@ module.exports = {
       '.scss',
     ],
     alias: {
-        data: path.resolve(__dirname, 'data/'),
         app: path.resolve(__dirname, 'src/app/'),
         style: path.resolve(__dirname, 'src/style/'),
     }

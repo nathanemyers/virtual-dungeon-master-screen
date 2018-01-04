@@ -57,7 +57,6 @@ class App extends Component {
       })
     }
 
-
     function onChange(event, data) {
       update_search(data.value)
     }
