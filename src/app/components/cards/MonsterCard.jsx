@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 import { Card } from 'semantic-ui-react'
 import Highlighter from 'react-highlight-words'
 
+import StatBlock from 'app/components/display/StatBlock'
+
 class MonsterCard extends Component {
   constructor(props) {
     super(props);
@@ -26,6 +28,14 @@ class MonsterCard extends Component {
             (Challenge Rating: {monster.challenge_rating})
           </Card.Meta>
           <Card.Description>
+            <StatBlock
+              str={monster.strength}
+              dex={monster.dexterity}
+              con={monster.constitution}
+              int={monster.intelligence}
+              wis={monster.wisdom}
+              cha={monster.charisma}
+            />
           </Card.Description>
         </Card.Content>
       </Card>
