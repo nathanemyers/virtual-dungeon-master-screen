@@ -12,7 +12,8 @@ class StatBlock extends Component {
     const { str, dex, con, int, wis, cha } = this.props
 
     function calc_mod(stat) {
-      return Math.floor((stat - 10) / 2)
+      let mod = Math.floor((stat - 10) / 2)
+      return (mod > 0) ? `+${mod}` : `-${mod}`
     }
 
     const str_mod = calc_mod(str)
@@ -23,14 +24,16 @@ class StatBlock extends Component {
     const cha_mod = calc_mod(cha)
 
     return (
-      <div className={style.stats}>
+      <div className={style.statblock}>
         <ul>
-          <li>STR: {str} ({str_mod})</li>
-          <li>DEX: {dex} ({dex_mod})</li>
-          <li>CON: {con} ({con_mod})</li>
-          <li>INT: {int} ({int_mod})</li>
-          <li>WIS: {wis} ({wis_mod})</li>
-          <li>CHA: {cha} ({cha_mod})</li>
+          <li><strong>STR:</strong> {str} ({str_mod})</li>
+          <li><strong>DEX:</strong> {dex} ({dex_mod})</li>
+          <li><strong>CON:</strong> {con} ({con_mod})</li>
+        </ul>
+        <ul>
+          <li><strong>INT:</strong> {int} ({int_mod})</li>
+          <li><strong>WIS:</strong> {wis} ({wis_mod})</li>
+          <li><strong>CHA:</strong> {cha} ({cha_mod})</li>
         </ul>
       </div>
     );
