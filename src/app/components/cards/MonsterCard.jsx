@@ -5,6 +5,8 @@ import { Card } from 'semantic-ui-react'
 import Highlighter from 'react-highlight-words'
 
 import StatBlock from 'app/components/display/StatBlock'
+import Ability from 'app/components/display/Ability'
+import Action from 'app/components/display/Action'
 
 class MonsterCard extends Component {
   constructor(props) {
@@ -18,6 +20,18 @@ class MonsterCard extends Component {
       backgroundColor: 'yellow'
     }
 
+    const special_abilities = monster.special_abilities || []
+    const abilities = special_abilities.map((ability, index) => {
+      return <Ability key={index} name={ability.name} desc={ability.desc}/>
+    })
+
+    const guarded_actions = monster.actions || []
+    const actions = guarded_actions.map((action, index) => {
+      return <Action key={index} name={action.name} desc={action.desc}/>
+    })
+
+    const type = `${monster.size} ${monster.type}, ${monster.alignment}`
+
     return (
       <Card color={"red"} raised={true}>
         <Card.Content>
@@ -25,9 +39,25 @@ class MonsterCard extends Component {
             <strong>{monster.name}</strong>
           </Card.Header>
           <Card.Meta>
-            (Challenge Rating: {monster.challenge_rating})
+            <div>
+              {type}
+            </div>
+            <div>
+              Challenge Rating: {monster.challenge_rating}
+            </div>
           </Card.Meta>
           <Card.Description>
+            <div>
+              <div>
+                <strong>Hit Points:</strong> {monster.hit_points}
+              </div>
+              <div>
+                <strong>Armor Class:</strong> {monster.armor_class}
+              </div>
+              <div>
+                <strong>Speed:</strong> {monster.speed}
+              </div>
+            </div>
             <StatBlock
               str={monster.strength}
               dex={monster.dexterity}
@@ -36,6 +66,10 @@ class MonsterCard extends Component {
               wis={monster.wisdom}
               cha={monster.charisma}
             />
+            <div className="abilities">
+              {abilities}
+              {actions}
+            </div>
           </Card.Description>
         </Card.Content>
       </Card>

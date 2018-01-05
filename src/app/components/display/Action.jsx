@@ -1,9 +1,7 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 
-import style from 'style/style'
-
-class Ability extends Component {
+class Action extends Component {
   constructor(props) {
     super(props);
   }
@@ -12,7 +10,7 @@ class Ability extends Component {
     const { name, desc } = this.props
 
     return (
-      <div className={style.ability}>
+      <div>
         <strong>{name}</strong>
         <p>{desc}</p>
       </div>
@@ -20,9 +18,12 @@ class Ability extends Component {
   }
 }
 
-Ability.propTypes = {
+Action.propTypes = {
   name: PropTypes.string.isRequired,
-  desc: PropTypes.string,
+  desc: PropTypes.string.isRequired,
+  attack_bonus: PropTypes.string,
+  damage_dice: PropTypes.string,
+  damage_bonus: PropTypes.string,
 }
 
-export default Ability;
+export default Action;

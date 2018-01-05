@@ -13,7 +13,7 @@ class StatBlock extends Component {
 
     function calc_mod(stat) {
       let mod = Math.floor((stat - 10) / 2)
-      return (mod > 0) ? `+${mod}` : `-${mod}`
+      return (mod > 0) ? `+${mod}` : `${mod}`
     }
 
     const str_mod = calc_mod(str)
