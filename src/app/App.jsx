@@ -79,7 +79,7 @@ class App extends Component {
               Search begins at {min_search} characters
             </div>
             :
-            <Card.Group itemsPerRow={3} stackable={true} doubling={true}>
+            <Card.Group itemsPerRow={1} stackable={true} doubling={true}>
               { spell_cards }
               { monster_cards }
             </Card.Group>
