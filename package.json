@@ -8,7 +8,8 @@
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "mocha --compilers js:babel-core/register --require ./test/test_helper.js 'test/**/*.js'",
     "test:watch": "npm run test -- --watch",
-    "dist": "webpack"
+    "dist": "webpack",
+    "deploy": "cp bundle.js ~/dev/blog/projects/virtual-dungeon-master-screen/virtual-dm-screen-1.0.0.js"
   },
   "author": "",
   "license": "ISC",

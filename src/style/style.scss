@@ -2,13 +2,10 @@
   margin: 3em 1em;
 }
 
-.statblock {
+ul.statblock {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-
-  ul {
-    padding: 0;
-  }
+  grid-template-columns: repeat(6, 1fr);
+  padding: 0;
   
   li {
     list-style: none;

@@ -24,18 +24,14 @@ class StatBlock extends Component {
     const cha_mod = calc_mod(cha)
 
     return (
-      <div className={style.statblock}>
-        <ul>
-          <li><strong>STR:</strong> {str} ({str_mod})</li>
-          <li><strong>DEX:</strong> {dex} ({dex_mod})</li>
-          <li><strong>CON:</strong> {con} ({con_mod})</li>
+        <ul className={style.statblock}>
+          <li><span className={style.bold}>STR:</span> {str} ({str_mod})</li>
+          <li><span className={style.bold}>DEX:</span> {dex} ({dex_mod})</li>
+          <li><span className={style.bold}>CON:</span> {con} ({con_mod})</li>
+          <li><span className={style.bold}>INT:</span> {int} ({int_mod})</li>
+          <li><span className={style.bold}>WIS:</span> {wis} ({wis_mod})</li>
+          <li><span className={style.bold}>CHA:</span> {cha} ({cha_mod})</li>
         </ul>
-        <ul>
-          <li><strong>INT:</strong> {int} ({int_mod})</li>
-          <li><strong>WIS:</strong> {wis} ({wis_mod})</li>
-          <li><strong>CHA:</strong> {cha} ({cha_mod})</li>
-        </ul>
-      </div>
     );
   }
 }
