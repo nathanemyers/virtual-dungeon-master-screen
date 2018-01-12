@@ -13,7 +13,7 @@ class Ability extends Component {
 
     return (
       <div className={style.ability}>
-        <strong>{name}</strong>
+        <span className={style.bold}>{name}</span>
         <p>{desc}</p>
       </div>
     );

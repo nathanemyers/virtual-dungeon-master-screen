@@ -8,6 +8,8 @@ import StatBlock from 'app/components/display/StatBlock'
 import Ability from 'app/components/display/Ability'
 import Action from 'app/components/display/Action'
 
+import style from 'style/style'
+
 class MonsterCard extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +38,7 @@ class MonsterCard extends Component {
       <Card color={"red"} raised={true}>
         <Card.Content>
           <Card.Header>
-            <strong>{monster.name}</strong>
+            <span className={style.bold}>{monster.name}</span>
           </Card.Header>
           <Card.Meta>
             <div>
@@ -49,13 +51,13 @@ class MonsterCard extends Component {
           <Card.Description>
             <div>
               <div>
-                <strong>Hit Points:</strong> {monster.hit_points}
+                <span className={style.bold}>Hit Points:</span> {monster.hit_points}
               </div>
               <div>
-                <strong>Armor Class:</strong> {monster.armor_class}
+                <span className={style.bold}>Armor Class:</span> {monster.armor_class}
               </div>
               <div>
-                <strong>Speed:</strong> {monster.speed}
+                <span className={style.bold}>Speed:</span> {monster.speed}
               </div>
             </div>
             <StatBlock

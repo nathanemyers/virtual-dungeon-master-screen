@@ -1,6 +1,8 @@
 import React, { Component} from 'react';
 import PropTypes from 'prop-types';
 
+import style from 'style/style'
+
 class Action extends Component {
   constructor(props) {
     super(props);
@@ -11,7 +13,7 @@ class Action extends Component {
 
     return (
       <div>
-        <strong>{name}</strong>
+        <span className={style.bold}>{name}</span>
         <p>{desc}</p>
       </div>
     );

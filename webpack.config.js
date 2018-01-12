@@ -8,7 +8,8 @@ module.exports = {
   output: {
     path: __dirname,
     publicPath: '/',
-    filename: `dist/virtual-dm-screen-${package.version}.js`
+    //filename: `dist/virtual-dm-screen-${package.version}.js`
+    filename: 'bundle.js'
   },
   module: {
     rules: [
@@ -16,7 +17,11 @@ module.exports = {
         test: /\.scss$/,
         use: [
           {loader: "style-loader"},
-          {loader: "css-loader", options: {modules: true}},        
+          {loader: "css-loader", options: {
+            modules: true,
+            sourceMap: false,
+            minimize: false,
+          }},        
           {loader: "sass-loader"},
         ]
       },
