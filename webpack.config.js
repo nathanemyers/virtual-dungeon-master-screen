@@ -1,4 +1,5 @@
 const path = require("path");
+const package = require('./package.json')
 
 module.exports = {
   entry: [
@@ -7,7 +8,7 @@ module.exports = {
   output: {
     path: __dirname,
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: `dist/virtual-dm-screen-${package.version}.js`
   },
   module: {
     rules: [
