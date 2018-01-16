@@ -15,3 +15,8 @@ yarn start
 ```
 yarn test
 ```
+
+# Dist
+```
+yarn dist
+```
