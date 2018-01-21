@@ -61,7 +61,7 @@ class App extends Component {
       update_search(data.value)
     }
 
-    const insuffiecient_search =  (search_term.length !== 0) && (search_term.length <= min_search)
+    const insufficient_search = (search_term.length !== 0) && (search_term.length <= min_search)
 
     return (
       <Container>
@@ -74,7 +74,7 @@ class App extends Component {
             onChange={onChange} 
           />
         </Container>
-        { insuffiecient_search ?
+        { insufficient_search ?
             <div>
               Search begins at {min_search} characters
             </div>
