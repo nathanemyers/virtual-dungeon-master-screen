@@ -1,7 +1,7 @@
 {
-  "name": "redux-simple-starter",
+  "name": "monster-manual-plus",
   "version": "1.0.0",
-  "description": "Simple starter package for Redux with React and Babel support",
+  "description": "Virtual Dungeon Master Reference",
   "main": "index.js",
   "repository": "git@github.com:StephenGrider/ReduxSimpleStarter.git",
   "scripts": {
@@ -11,7 +11,7 @@
     "dist": "webpack",
     "deploy": "cp bundle.js ~/dev/blog/projects/virtual-dungeon-master-screen/virtual-dm-screen-1.0.0.js"
   },
-  "author": "",
+  "author": "Nathan Myers (nathanemyers@gmail.com)",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^6.2.1",
